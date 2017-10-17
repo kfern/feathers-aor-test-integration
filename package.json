@@ -1,0 +1,24 @@
+{
+  "name": "feathers-aor-test-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified @TODO\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kfern/feathers-aor-test-integration.git"
+  },
+  "keywords": [
+    "feathers",
+    "admin-on-rest",
+    "aor-feathers-client"
+  ],
+  "author": "@kfern",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kfern/feathers-aor-test-integration/issues"
+  },
+  "homepage": "https://github.com/kfern/feathers-aor-test-integration#readme"
+}
