@@ -5,6 +5,7 @@ const port = app.get('port');
 const server = app.listen(port);
 
 const usersInit = function (){
+  logger.info('Cleaning Users...');
   return app.service('users').remove(null, {})
     .then(function(){
       return usersCreate();
@@ -12,6 +13,7 @@ const usersInit = function (){
 };
 
 const usersCreate = function (){
+  logger.info('Creating Users...'); 
   return Promise.all([
     app.service('users').create({
       name: 'Administrator',
