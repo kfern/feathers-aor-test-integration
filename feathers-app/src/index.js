@@ -7,7 +7,7 @@ const server = app.listen(port);
 const usersInit = function (){
   return app.service('users').remove(null, {})
     .then(function(){
-        return usersCreate();
+      return usersCreate();
     });
 };
 
@@ -24,9 +24,10 @@ const usersCreate = function (){
       password: 'user'
     })
   ]).then(function(){
-      logger.info('Users created:'); 
-      logger.info('Username: admin@test Password: admin');
-      logger.info('Username: user@test  Password: user');     
+    logger.info('Users created:'); 
+    logger.info('Username: admin@test Password: admin');
+    logger.info('Username: user@test  Password: user');
+    return Promise.resolve();
   });
     
 };
@@ -37,9 +38,8 @@ process.on('unhandledRejection', (reason, p) =>
 
 server.on('listening', () =>
   usersInit().then(
-      logger.info('Feathers application started on http://%s:%d', app.get('host'), port)
-    )
-    .catch(function(error){
-      logger.error(error);
-    })
+    logger.info('Feathers application started on http://%s:%d', app.get('host'), port)
+  ).catch(function(error){
+    logger.error(error);
+  })
 );
