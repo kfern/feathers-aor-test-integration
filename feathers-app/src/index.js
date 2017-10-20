@@ -13,7 +13,7 @@ const usersInit = function (){
 };
 
 const usersCreate = function (){
-  logger.info('Creating Users...'); 
+  logger.info('Creating Users...');
   return Promise.all([
     app.service('users').create({
       name: 'Administrator',
@@ -21,17 +21,17 @@ const usersCreate = function (){
       password: 'admin'
     }),
     app.service('users').create({
-      name: 'Standard user', 
+      name: 'Standard user',
       email: 'user@test',
       password: 'user'
     })
   ]).then(function(){
-    logger.info('Users created:'); 
+    logger.info('Users created:');
     logger.info('Username: admin@test Password: admin');
     logger.info('Username: user@test  Password: user');
     return Promise.resolve();
   });
-    
+
 };
 
 process.on('unhandledRejection', (reason, p) =>
