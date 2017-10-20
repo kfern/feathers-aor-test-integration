@@ -19,8 +19,16 @@ const App = () => (
     authClient={authClient(feathersClient, authClientOptions)}
     restClient={restClient(feathersClient, options)}
   >
-    <Resource name="users" list={UsersList} />
-    <Resource name="teams" list={TeamsList} create={TeamsCreate} edit={TeamsEdit} remove={Delete} />
+    {permissions => [
+      permissions === 'admin' ? <Resource name="users" list={UsersList} /> : null,
+      <Resource
+        name="teams"
+        list={TeamsList}
+        create={permissions === 'admin' ? TeamsCreate : null}
+        edit={permissions === 'admin' ? TeamsEdit : null}
+        remove={permissions === 'admin' ? Delete : null}
+      />
+    ]}
   </Admin>
 );
 
