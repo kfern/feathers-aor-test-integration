@@ -1,5 +1,7 @@
 # feathers-aor-test-integration
 
+[![Build Status](https://travis-ci.org/kfern/feathers-aor-test-integration.svg?branch=master)](https://travis-ci.org/kfern/feathers-aor-test-integration)
+
 ## How to...
 
 @TODO
