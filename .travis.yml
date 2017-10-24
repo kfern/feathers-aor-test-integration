@@ -1,0 +1,12 @@
+notifications:
+  email: true
+
+language: node_js
+node_js:
+  - node
+  - '6'
+  
+before_install:
+  - stty cols 80  
+
+script: npm run test-travis
