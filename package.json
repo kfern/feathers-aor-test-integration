@@ -9,7 +9,7 @@
     "start": "npm run build && cd feathers-app && npm run start",
     "test": "npm run build && npm run test-local",    
     "test-local": "testcafe all test/*.js --app \"cd feathers-app && node src/index.js\"",
-    "test-travis": "npm run build && npm run test-saucelabs-ie-11 && npm run test-saucelabs-chrome",
+    "test-travis": "npm run build && npm run test-saucelabs-chrome",
     "saucelabs-browsers": "testcafe -b saucelabs",
     "test-saucelabs-ie-11": "testcafe \"saucelabs:Internet Explorer@11.0:Windows 7\" test/*.js --app \"cd feathers-app && node src/index.js\"",
     "test-saucelabs-chrome": "testcafe \"saucelabs:Chrome\" test/*.js --app \"cd feathers-app && node src/index.js\"",
