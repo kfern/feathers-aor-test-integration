@@ -1,6 +1,6 @@
 const { authenticate } = require('feathers-authentication').hooks;
 const commonHooks = require('feathers-hooks-common');
-const { restrictToOwner } = require('feathers-authentication-hooks');
+const { restrictToOwner, restrictToRoles } = require('feathers-authentication-hooks');
 
 const { hashPassword } = require('feathers-authentication-local').hooks;
 const restrict = [
@@ -14,12 +14,12 @@ const restrict = [
 module.exports = {
   before: {
     all: [],
-    find: [ authenticate('jwt') ],
+    find: [ authenticate('jwt'), restrictToRoles({ roles: ['admin']}) ],
     get: [ ...restrict ],
-    create: [ hashPassword() ],
+    create: [ authenticate('jwt'), restrictToRoles({ roles: ['admin']}), hashPassword() ],
     update: [ ...restrict, hashPassword() ],
     patch: [ ...restrict, hashPassword() ],
-    remove: [ ...restrict ]
+    remove: [ authenticate('jwt'), restrictToRoles({ roles: ['admin']}) ]
   },
 
   after: {

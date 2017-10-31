@@ -18,12 +18,14 @@ const usersCreate = function (){
     app.service('users').create({
       name: 'Administrator',
       email: 'admin@test',
-      password: 'admin'
+      password: 'admin',
+      roles: 'admin'
     }),
     app.service('users').create({
       name: 'Standard user',
       email: 'user@test',
-      password: 'user'
+      password: 'user',
+      roles: 'user'
     })
   ]).then(function(){
     logger.info('Users created:');
