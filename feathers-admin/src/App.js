@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import React from 'react';
 import { Admin, Resource } from 'admin-on-rest';
 import { authClient, restClient } from 'aor-feathers-client';

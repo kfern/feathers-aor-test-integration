@@ -9,9 +9,12 @@
     "start": "npm run build && cd feathers-app && npm run start",
     "test": "npm run build && npm run test-local",    
     "test-local": "testcafe all test/*.js --app \"cd feathers-app && node src/index.js\"",
-    "test-travis": "npm run build && npm run test-saucelabs-chrome",
+    "test-travis": "npm run build && npm run test-saucelabs-chrome && npm run test-saucelabs-ie-11 && npm run test-saucelabs-ie-10",
     "saucelabs-browsers": "testcafe -b saucelabs",
     "test-saucelabs-ie-11": "testcafe \"saucelabs:Internet Explorer@11.0:Windows 7\" test/*.js --app \"cd feathers-app && node src/index.js\"",
+    "test-saucelabs-ie-10": "testcafe \"saucelabs:Internet Explorer@10.0:Windows 7\" test/*.js --app \"cd feathers-app && node src/index.js\"",        
+    "test-saucelabs-ie-9": "testcafe \"saucelabs:Internet Explorer@9.0:Windows 7\" test/*.js --app \"cd feathers-app && node src/index.js\"",        
+    "test-saucelabs-ie-8": "testcafe \"saucelabs:Internet Explorer@8.0:Windows 7\" test/*.js --app \"cd feathers-app && node src/index.js\"",        
     "test-saucelabs-chrome": "testcafe \"saucelabs:Chrome\" test/*.js --app \"cd feathers-app && node src/index.js\"",
     "install-app": "cd feathers-app && npm install",
     "install-admin": "cd feathers-admin && npm install"
