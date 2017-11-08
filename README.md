@@ -1,7 +1,6 @@
 # feathers-aor-test-integration
 
 [![Build Status](https://travis-ci.org/kfern/feathers-aor-test-integration.svg?branch=master)](https://travis-ci.org/kfern/feathers-aor-test-integration)
-[![Sauce Test Status](https://saucelabs.com/buildstatus/kfern)](https://saucelabs.com/u/kfern)
 
 ## How to...
 
