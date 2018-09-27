@@ -10,7 +10,7 @@
     "feathers-client": "^2.4.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.1.5",
+    "react-scripts": "2.0.0",
     "snyk": "^1.88.2"
   },
   "scripts": {
